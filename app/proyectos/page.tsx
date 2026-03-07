@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: 'Portfolio completo de proyectos y resultados obtenidos.',
 }
 
-export const revalidate = 60
+export const dynamic = 'force-dynamic'
 
 export default async function ProyectosPage() {
   const [projects, config] = await Promise.all([getAllProjects(), getSiteConfig()])

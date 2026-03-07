@@ -7,6 +7,8 @@ import { Projects } from '@/components/sections/Projects'
 import { Contact } from '@/components/sections/Contact'
 import { getSiteConfig, getServices, getFeaturedProjects } from '@/lib/queries'
 
+export const dynamic = 'force-dynamic'
+
 export default async function Home() {
   const [config, services, projects] = await Promise.all([
     getSiteConfig(),

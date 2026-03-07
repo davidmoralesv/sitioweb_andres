@@ -10,7 +10,7 @@ import { getProjectBySlug, getAllProjects, getSiteConfig } from '@/lib/queries'
 import { urlFor } from '@/sanity/imageUrl'
 import { formatDate } from '@/lib/utils'
 
-export const revalidate = 60
+export const dynamic = 'force-dynamic'
 
 export async function generateStaticParams() {
   const projects = await getAllProjects()
