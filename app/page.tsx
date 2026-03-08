@@ -16,6 +16,17 @@ export default async function Home() {
     getFeaturedProjects(),
   ])
 
+  if (!config) {
+    return (
+      <>
+        <Navbar />
+        <main className="min-h-screen flex items-center justify-center">
+          <p className="text-text-muted">Configura el contenido en <a href="/studio" className="text-gold underline">/studio</a></p>
+        </main>
+      </>
+    )
+  }
+
   return (
     <>
       <Navbar />
@@ -26,9 +37,9 @@ export default async function Home() {
           shortBio={config.shortBio}
           photo={config.photo}
         />
-        <About longBio={config.longBio} stats={config.stats ?? []} />
-        <Services services={services} />
-        <Projects projects={projects} />
+        <About longBio={config.longBio ?? []} stats={config.stats ?? []} />
+        <Services services={services ?? []} />
+        <Projects projects={projects ?? []} />
         <Contact />
       </main>
       <Footer name={config.name} socialLinks={config.socialLinks ?? []} />
