@@ -6,6 +6,7 @@ import { schemaTypes } from './sanity/schemas'
 export default defineConfig({
   name: 'portfolio',
   title: 'Portfolio CMS',
+  basePath: '/studio',
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
   plugins: [structureTool(), visionTool()],
